@@ -1,6 +1,6 @@
-## grunt-css-sprite
+# grunt-css-sprite
 
-### 这是什么
+## 这是什么
 
 这是一个帮助前端开发工程师将 css 代码中的切片合并成雪碧图的工具；
 它的主要功能是：
@@ -14,48 +14,105 @@
 7. 在样式末尾追加时间戳
 8. 按照时间戳命名文件
 
+## 基本用法
 
-### 配置说明
+```
+var cssSpriteSmith = require('css-spritesmith');
 
-    // 自动雪碧图
-    options: {
-        // css file
-        cssfile: null,
-        // 编码，默认 String|Null default = 'utf8'
-        encoding: null,
-        // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
-        imagepath: 'images/slice/',
-        // 映射CSS中背景路径，支持函数和数组，默认为 null
-        imagepath_map: null,
-        // 雪碧图输出目录，注意，会覆盖之前文件！默认 images/
-        spritedest: 'images/',
-        // 替换后的背景路径，默认 ../images/
-        spritepath: '../images/',
-        // 各图片间间距，如果设置为奇数，会强制+1以保证生成的2x图片为偶数宽高，默认 0
-        padding: 0,
-        // 是否使用 image-set 作为2x图片实现，默认不使用
-        useimageset: false,
-        // 是否以时间戳为文件名生成新的雪碧图文件，如果启用请注意清理之前生成的文件，默认不生成新文件
-        newsprite: false,
-        // 给雪碧图追加时间戳，默认不追加
-        spritestamp: false,
-        // 在CSS文件末尾追加时间戳，默认不追加
-        cssstamp: false,
-        // 默认使用二叉树最优排列算法
-        algorithm: 'binary-tree',
-        // 默认使用`pixelsmith`图像处理引擎
-        engine: 'pixelsmith',
+// use media query
+var timeStamp = +new Date();
+console.log('Start create sprite, with media query');
 
-        // 扩展参数，不建议修改，image-set 模板，占位文件
-        IMAGE_SET_CSS_TMPL: IMAGE_SET_CSS_TMPL,
+cssSpriteSmith({
+    cssfile: 'css/icon.css',
+    // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
+    imagepath: 'slice/',
+    // 替换后的背景路径，默认 ../images/
+    spritepath: '../images/',
+    // 各图片间间距，如果设置为奇数，会强制+1以保证生成的2x图片为偶数宽高，默认 0
+    padding: 2,
+    // 是否使用 image-set 作为2x图片实现，默认不使用
+    useimageset: false,
+    // 是否以时间戳为文件名生成新的雪碧图文件，如果启用请注意清理之前生成的文件，默认不生成新文件
+    newsprite: false,
+    // 给雪碧图追加时间戳，默认不追加
+    spritestamp: true,
+    // 在CSS文件末尾追加时间戳，默认不追加
+    cssstamp: true,
+    // 默认使用二叉树最优排列算法
+    algorithm: 'binary-tree',
+    // 默认使用`pixelsmith`图像处理引擎
+    engine: 'pixelsmith'
+}, function(err, data) {
+    // write css file
+    var cssFile = 'publish/css/icon.sprite.css';
+    fs.writeFileSync(cssFile, data.cssData);
+    console.log(cssFile, 'write success!');
 
-        // 扩展参数，不建议修改， 配置模板
-        MEDIA_QUERY_CSS_TMPL: MEDIA_QUERY_CSS_TMPL,
-        CSS_DATA_TMPL: CSS_DATA_TMPL
-    }
+    // sprite image
+    var srpiteFile = 'publish/images/icon.png';
+    fs.writeFileSync(srpiteFile, data.spriteData.image, {
+        encoding: 'binary'
+    });
+    console.log(srpiteFile, 'write success!');
+
+    // retina sprite image
+    var retinaSrpiteFile = 'publish/images/icon@2x.png';
+    fs.writeFileSync(retinaSrpiteFile, data.retinaSpriteData.image, {
+        encoding: 'binary'
+    });
+    console.log(retinaSrpiteFile, 'write success!');
+
+    // timeStamp
+    console.log('Create sprite success, with medai query');
+    console.log('Elapsed ', (+new Date()) - timeStamp, 'ms\n');
+});
+```
 
 
-### 特别注意
+## 配置说明
+
+```
+// 自动雪碧图
+options: {
+    // css file
+    cssfile: null,
+    // 编码，默认 String|Null default = 'utf8'
+    encoding: null,
+    // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
+    imagepath: 'images/slice/',
+    // 映射CSS中背景路径，支持函数和数组，默认为 null
+    imagepath_map: null,
+    // 雪碧图输出目录，注意，会覆盖之前文件！默认 images/
+    spritedest: 'images/',
+    // 替换后的背景路径，默认 ../images/
+    spritepath: '../images/',
+    // 各图片间间距，如果设置为奇数，会强制+1以保证生成的2x图片为偶数宽高，默认 0
+    padding: 0,
+    // 是否使用 image-set 作为2x图片实现，默认不使用
+    useimageset: false,
+    // 是否以时间戳为文件名生成新的雪碧图文件，如果启用请注意清理之前生成的文件，默认不生成新文件
+    newsprite: false,
+    // 给雪碧图追加时间戳，默认不追加
+    spritestamp: false,
+    // 在CSS文件末尾追加时间戳，默认不追加
+    cssstamp: false,
+    // 默认使用二叉树最优排列算法
+    algorithm: 'binary-tree',
+    // 默认使用`pixelsmith`图像处理引擎
+    engine: 'pixelsmith',
+
+    // 扩展参数，不建议修改，image-set 模板，占位文件
+    IMAGE_SET_CSS_TMPL: IMAGE_SET_CSS_TMPL,
+
+    // 扩展参数，不建议修改， 配置模板
+    MEDIA_QUERY_CSS_TMPL: MEDIA_QUERY_CSS_TMPL,
+    CSS_DATA_TMPL: CSS_DATA_TMPL
+}
+```
+
+
+## 特别注意
 
 1. 生成后的雪碧图将以源 css 文件名来命名
 2. 仅当CSS中定义`url(xxxx)`的路径匹配参数`imagepath`才进行处理，和具体`background`，`background-image`CSS无关，这里有区别于`grunt-sprite`
@@ -63,7 +120,7 @@
 4. 理论上所有的切片都应该是 `.png` 格式，`png8` `png24` 和 `png32`不限
 5. `spritesmith` 默认只支持png格式，如果有其他格式需要，请参考 *可选依赖*
 
-### 可选依赖
+## 可选依赖
 
 `grunt-css-sprite` 使用 [spritesmith](https://github.com/Ensighten/spritesmith) 作为内部核心实现
 
@@ -86,12 +143,12 @@
         npm install gmsmith
         ```
 
-### 版本记录
+## 版本记录
 
 `0.0.1` 从 `grunt-css-sprite` 分离，为支持 `gulp` 做准备
 
 
-### 致谢
+## 致谢
 
 感谢 [spritesmith](https://github.com/Ensighten/spritesmith)
 
