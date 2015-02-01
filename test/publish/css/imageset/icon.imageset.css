@@ -60,7 +60,7 @@ a[href*='}{']::after{ content:'}{';}
 span{ background: no-repeat;background-position: -132px -49px; }
 
 
-/* ../../images/imageset/icon.png */
+/* ../../images/imageset/icon.png?20150202001032 */
 .icon_switch-off,
 .icon_switch-on,
 .icon_tip-error,
@@ -76,6 +76,6 @@ span{ background: no-repeat;background-position: -132px -49px; }
 .iocn_ext10,
 #iocn_ext11,
 span{
-background-image: url(../../images/imageset/icon.png);
-background-image: -webkit-image-set(url(../../images/imageset/icon.png) 1x, url(../../images/imageset/icon@2x.png) 2x); background-image: -moz-image-set(url(../../images/imageset/icon.png) 1x, url(../../images/imageset/icon@2x.png) 2x); background-image: -ms-image-set(url(../../images/imageset/icon.png) 1x, url(../../images/imageset/icon@2x.png) 2x); background-image: image-set(url(../../images/imageset/icon.png) 1x, url(../../images/imageset/icon@2x.png) 2x);
+background-image: url(../../images/imageset/icon.png?20150202001032);
+background-image: -webkit-image-set(url(../../images/imageset/icon.png?20150202001032) 1x, url(../../images/imageset/icon@2x.png?20150202001032) 2x); background-image: -moz-image-set(url(../../images/imageset/icon.png?20150202001032) 1x, url(../../images/imageset/icon@2x.png?20150202001032) 2x); background-image: -ms-image-set(url(../../images/imageset/icon.png?20150202001032) 1x, url(../../images/imageset/icon@2x.png?20150202001032) 2x); background-image: image-set(url(../../images/imageset/icon.png?20150202001032) 1x, url(../../images/imageset/icon@2x.png?20150202001032) 2x);
 }

@@ -9,6 +9,8 @@ cssSpriteSmith({
     cssfile: 'css/icon.css',
     // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
     imagepath: 'slice/',
+    // 替换后的背景路径，默认 ../images/
+    spritepath: '../images/',
     // 各图片间间距，如果设置为奇数，会强制+1以保证生成的2x图片为偶数宽高，默认 0
     padding: 2,
     // 是否使用 image-set 作为2x图片实现，默认不使用
@@ -55,16 +57,17 @@ console.log('Start create sprite, with image-set');
 cssSpriteSmith({
     cssfile: 'css/icon.css',
     imagepath: 'slice/',
-    useimageset: true,
     padding: 20,
+    useimageset: true,
+    spritestamp: true,
     imagepath_map: ['/w/grunt-css-sprite/test/', '../'],
     /*
     imagepath_map: function(uri) {
         return String(uri).replace('/w/grunt-css-sprite/test/', '../');
     },
     */
+    spritepath: '../../images/imageset/',
     spritedest: 'publish/images/imageset/',
-    spritepath: '../../images/imageset/'
     //,spritepath: '/w/grunt-css-sprite/test/publish/images/imageset/'
 }, function(err, data) {
     if(data.cssData === null) {
