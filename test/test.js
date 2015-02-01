@@ -1,4 +1,9 @@
+var fs = require('fs');
 var cssSpriteSmith = require('../lib/css-spritesmith');
+
+// use media query
+var timeStamp = +new Date();
+console.log('Start create sprite, with media query');
 
 cssSpriteSmith({
     cssfile: 'css/icon.css',
@@ -18,7 +23,75 @@ cssSpriteSmith({
     algorithm: 'binary-tree',
     // 默认使用`pixelsmith`图像处理引擎
     engine: 'pixelsmith'
-}, function(err, spriteData) {
-    console.log(spriteData.cssData);
+}, function(err, data) {
+    // write css file
+    var cssFile = 'publish/css/icon.sprite.css';
+    fs.writeFileSync(cssFile, data.cssData);
+    console.log(cssFile, 'write success!');
+
+    // sprite image
+    var srpiteFile = 'publish/images/icon.png';
+    fs.writeFileSync(srpiteFile, data.spriteData.image, {
+        encoding: 'binary'
+    });
+    console.log(srpiteFile, 'write success!');
+
+    // retina sprite image
+    var retinaSrpiteFile = 'publish/images/icon@2x.png';
+    fs.writeFileSync(retinaSrpiteFile, data.retinaSpriteData.image, {
+        encoding: 'binary'
+    });
+    console.log(retinaSrpiteFile, 'write success!');
+
+    // timeStamp
+    console.log('Create sprite success, with medai query');
+    console.log('Elapsed ', (+new Date()) - timeStamp, 'ms\n');
 });
 
+// use image-set
+var imageSetTimeStamp = +new Date();
+console.log('Start create sprite, with image-set');
+
+cssSpriteSmith({
+    cssfile: 'css/icon.css',
+    imagepath: 'slice/',
+    useimageset: true,
+    padding: 20,
+    imagepath_map: ['/w/grunt-css-sprite/test/', '../'],
+    /*
+    imagepath_map: function(uri) {
+        return String(uri).replace('/w/grunt-css-sprite/test/', '../');
+    },
+    */
+    spritedest: 'publish/images/imageset/',
+    spritepath: '../../images/imageset/'
+    //,spritepath: '/w/grunt-css-sprite/test/publish/images/imageset/'
+}, function(err, data) {
+    if(data.cssData === null) {
+        console.error('Not found slice icon');
+        return;
+    }
+
+    // write css file
+    var cssFile = 'publish/css/imageset/icon.imageset.css';
+    fs.writeFileSync(cssFile, data.cssData);
+    console.log(cssFile, 'write success!');
+
+    // sprite image
+    var srpiteFile = 'publish/images/imageset/icon.png';
+    fs.writeFileSync(srpiteFile, data.spriteData.image, {
+        encoding: 'binary'
+    });
+    console.log(srpiteFile, 'write success!');
+
+    // retina sprite image
+    var retinaSrpiteFile = 'publish/images/imageset/icon@2x.png';
+    fs.writeFileSync(retinaSrpiteFile, data.retinaSpriteData.image, {
+        encoding: 'binary'
+    });
+    console.log(retinaSrpiteFile, 'write success!');
+
+    // timeStamp
+    console.log('Create sprite success, with image-set');
+    console.log('Elapsed ', (+new Date()) - imageSetTimeStamp, 'ms\n');
+});
