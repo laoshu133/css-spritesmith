@@ -26,7 +26,7 @@
     "node": ">= 0.9.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test && cd test && node test.js"
   },
   "dependencies": {
     "async": "^0.9.0",
