@@ -14,6 +14,13 @@
 7. 在样式末尾追加时间戳
 8. 按照时间戳命名文件
 
+## For Grunt & Gulp
+
+[grunt-css-sprite](https://github.com/laoshu133/grunt-css-sprite)
+
+[gulp-css-sprite](https://github.com/laoshu133/gulp-css-sprite)
+
+
 ## 基本用法
 
 ```

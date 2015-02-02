@@ -1,7 +1,7 @@
 {
   "name": "css-spritesmith",
   "description": "A plugin to help front engineer creating css sprite.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/laoshu133/css-spritesmith",
   "author": {
     "name": "Mikongge",
