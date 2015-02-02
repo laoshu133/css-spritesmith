@@ -1,4 +1,4 @@
-# grunt-css-sprite
+# css-spritesmith
 
 ## 这是什么
 
