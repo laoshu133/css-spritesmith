@@ -59,8 +59,37 @@ a[href*='}{']::after{ content:'}{';}
 
 span{ background: no-repeat;background-position: -132px -49px; }
 
+/* multi selector test */
+.ww-btn,
+.ww-btn-s,
+.ww-btn-group{
+  display: inline-block;
+  background: no-repeat;background-position: -132px -49px;
+  line-height: 110px;
+  margin: -5px 0 0 .4em;
+  height: 24px;
+  width: 66px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.ww-btn-s{
+  background-position: -91px 0;
+  margin-top: -3px;
+  height: 18px;
+  width: 50px;
+}
+.ww-btn-group{
+  background-position: 0 0;
+  height: 24px;
+  width: 90px;
+  opacity: .9;
+  &:hover{
+    opacity: 1;
+  }
+}
 
-/* ../../images/imageset/icon.png?20150202001032 */
+
+/* ../../images/imageset/icon.png?20150212203738 */
 .icon_switch-off,
 .icon_switch-on,
 .icon_tip-error,
@@ -75,7 +104,10 @@ span{ background: no-repeat;background-position: -132px -49px; }
 .iocn_ext9,
 .iocn_ext10,
 #iocn_ext11,
-span{
-background-image: url(../../images/imageset/icon.png?20150202001032);
-background-image: -webkit-image-set(url(../../images/imageset/icon.png?20150202001032) 1x, url(../../images/imageset/icon@2x.png?20150202001032) 2x); background-image: -moz-image-set(url(../../images/imageset/icon.png?20150202001032) 1x, url(../../images/imageset/icon@2x.png?20150202001032) 2x); background-image: -ms-image-set(url(../../images/imageset/icon.png?20150202001032) 1x, url(../../images/imageset/icon@2x.png?20150202001032) 2x); background-image: image-set(url(../../images/imageset/icon.png?20150202001032) 1x, url(../../images/imageset/icon@2x.png?20150202001032) 2x);
+span,
+.ww-btn,
+.ww-btn-s,
+.ww-btn-group{
+background-image: url(../../images/imageset/icon.png?20150212203738);
+background-image: -webkit-image-set(url(../../images/imageset/icon.png?20150212203738) 1x, url(../../images/imageset/icon@2x.png?20150212203738) 2x); background-image: -moz-image-set(url(../../images/imageset/icon.png?20150212203738) 1x, url(../../images/imageset/icon@2x.png?20150212203738) 2x); background-image: -ms-image-set(url(../../images/imageset/icon.png?20150212203738) 1x, url(../../images/imageset/icon@2x.png?20150212203738) 2x); background-image: image-set(url(../../images/imageset/icon.png?20150212203738) 1x, url(../../images/imageset/icon@2x.png?20150212203738) 2x);
 }
