@@ -58,3 +58,32 @@ a[href*='}{']::after{ content:'}{';}
 }
 
 span{ background:url(../slice/icon_wait.png) no-repeat; }
+
+/* multi selector test */
+.ww-btn,
+.ww-btn-s,
+.ww-btn-group{
+  display: inline-block;
+  background: url(../slice/icon_wait.png) no-repeat;
+  line-height: 110px;
+  margin: -5px 0 0 .4em;
+  height: 24px;
+  width: 66px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.ww-btn-s{
+  background-image: url(../slice/icon_switch-on.png);
+  margin-top: -3px;
+  height: 18px;
+  width: 50px;
+}
+.ww-btn-group{
+  background-image: url(../slice/icon_switch-off.png);
+  height: 24px;
+  width: 90px;
+  opacity: .9;
+  &:hover{
+    opacity: 1;
+  }
+}
