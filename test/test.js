@@ -46,7 +46,7 @@ cssSpriteSmith({
     console.log(retinaSrpiteFile, 'write success!');
 
     // timeStamp
-    console.log('Create sprite success, with medai query');
+    console.log('Create sprite success, with media query');
     console.log('Elapsed ', (+new Date()) - timeStamp, 'ms\n');
 });
 
