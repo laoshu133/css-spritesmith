@@ -16,5 +16,4 @@ module.exports = function(grunt) {
 
 	// 声明别名
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('test', ['default']);
 };
