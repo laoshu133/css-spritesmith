@@ -93,7 +93,7 @@ span{ background: no-repeat;background-position: -78px -66px; }
 }
 
 
-/* ../images/icon.png?20160624021933 */
+/* ../images/icon.png?20160624022159 */
 .icon_switch-off,
 .icon_switch-on,
 .icon_tip-error,
@@ -112,11 +112,11 @@ span,
 .ww-btn,
 .ww-btn-s,
 .ww-btn-group{
-background-image: url(../images/icon.png?20160624021933);
+background-image: url(../images/icon.png?20160624022159);
 }
 
 
-/* ../images/icon@2x.png?20160624021933 */
+/* ../images/icon@2x.png?20160624022159 */
 @media only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi), only screen and (min-resolution: 2dppx) {
 .icon_switch-off,
 .icon_switch-on,
@@ -136,7 +136,7 @@ span,
 .ww-btn,
 .ww-btn-s,
 .ww-btn-group{
-background-image: url(../images/icon@2x.png?20160624021933);
+background-image: url(../images/icon@2x.png?20160624022159);
 background-size: 136px auto;
 }
 .icon_switch-off{
@@ -197,4 +197,4 @@ background-position: -65px 0;
 } 
 }
 
-.css_stamp{ content:"20160624021933";}
+.css_stamp{ content:"20160624022159";}
