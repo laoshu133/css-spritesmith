@@ -7,16 +7,20 @@
 
 a[href*='}{']::after{ content:'}{';}
 
-.icon_switch-off{background-position: 0 0;width:71px;height:29px}
+.icon_switch-off{background-position: -84px 0;width:71px;height:29px}
 
 a[href*='}{']::after{ content:'}{';}
 
-.icon_switch-off{background-position: 0 0;width:71px;height:29px}
-.icon_switch-on{background-position: -91px 0;width:71px;height:29px}
-.icon_tip-error{background-position: 0 -49px;width:24px;height:24px}
-.icon_tip-ok{background-position: -44px -49px;width:24px;height:24px}
-.icon_tip-warn{background-position: -88px -49px;width:24px;height:24px}
-.icon_wait{background-position: -132px -49px;width:14px;height:14px}
+.icon_switch-off{background-position: -84px 0;width:71px;height:29px}
+.icon_switch-on{background-position: 0 -84px;width:71px;height:29px}
+.icon_tip-error{background-position: -91px -84px;width:24px;height:24px}
+.icon_tip-ok{background-position: -175px 0;width:24px;height:24px}
+.icon_tip-warn{background-position: -175px -44px;width:24px;height:24px}
+.icon_wait{background-position: -175px -88px;width:14px;height:14px}
+
+.icon_ppt{
+  background-position: 0 0;width:64px;height:64px
+}
 
 /* comments test */
 /*.icon_switch-off{background-image:url("../slice/icon_switch-off.png");width:71px;height:29px}
@@ -26,45 +30,45 @@ a[href*='}{']::after{ content:'}{';}
 .icon_tip-warn{background-image:url("../slice/icon_tip-warn.png");width:24px;height:24px}
 .icon_wait{background-image:url("../slice/icon_wait.png") !important;width:14px;height:14px}*/
 
-.iocn_ext1{ background-position: -132px -49px;}
-.iocn_ext1{ background-position: -132px -49px; /* repeat test */}
+.iocn_ext1{ background-position: -175px -88px;}
+.iocn_ext1{ background-position: -175px -88px; /* repeat test */}
 /* miss semicolon test */
-.iocn_ext2{ height:14px; width:14px; background-position: -132px -49px;}
+.iocn_ext2{ height:14px; width:14px; background-position: -175px -88px;}
 .iocn_ext3{ background-image:url(../slice/icon_wait_nofile.png); /* no file test */}
-.iocn_ext4{ background: no-repeat;background-position: -132px -49px;}
-.iocn_ext5{ background:#fff no-repeat;background-position: -132px -49px;}
+.iocn_ext4{ background: no-repeat;background-position: -175px -88px;}
+.iocn_ext5{ background:#fff no-repeat;background-position: -175px -88px;}
 
 /* path test */
 .iocn_ext7{ background-image:url(/slice/icon_wait.png);}
-.iocn_ext8{ background-position: -132px -49px;}
+.iocn_ext8{ background-position: -175px -88px;}
 
 .iocn_ext9{
 	/* multi-line test */
 	background:url(/slice/icon_wait.png) no-repeat;
-	background-image: no-repeat;background-position: -132px -49px;
+	background-image: no-repeat;background-position: -175px -88px;
 }
 
 .iocn_ext10{
 	/* content test */
 	content: '}';
-	background: no-repeat;background-position: -88px -49px;
+	background: no-repeat;background-position: -175px -44px;
 	_background-image:url(../slice/icon_tip-warn.png);
 }
 
 #iocn_ext11{
-	background: no-repeat;background-position: -132px -49px;
-	background-position: -88px -49px;
+	background: no-repeat;background-position: -175px -88px;
+	background-position: -175px -44px;
 	content: '}';
 }
 
-span{ background: no-repeat;background-position: -132px -49px; }
+span{ background: no-repeat;background-position: -175px -88px; }
 
 /* multi selector test */
 .ww-btn,
 .ww-btn-s,
 .ww-btn-group{
   display: inline-block;
-  background: no-repeat;background-position: -132px -49px;
+  background: no-repeat;background-position: -175px -88px;
   line-height: 110px;
   margin: -5px 0 0 .4em;
   height: 24px;
@@ -73,13 +77,13 @@ span{ background: no-repeat;background-position: -132px -49px; }
   vertical-align: middle;
 }
 .ww-btn-s{
-  background-position: -91px 0;
+  background-position: 0 -84px;
   margin-top: -3px;
   height: 18px;
   width: 50px;
 }
 .ww-btn-group{
-  background-position: 0 0;
+  background-position: -84px 0;
   height: 24px;
   width: 90px;
   opacity: .9;
@@ -89,13 +93,14 @@ span{ background: no-repeat;background-position: -132px -49px; }
 }
 
 
-/* ../../images/imageset/icon.png?20150326150631 */
+/* ../../images/imageset/icon.png?20160624022159 */
 .icon_switch-off,
 .icon_switch-on,
 .icon_tip-error,
 .icon_tip-ok,
 .icon_tip-warn,
 .icon_wait,
+.icon_ppt,
 .iocn_ext1,
 .iocn_ext2,
 .iocn_ext4,
@@ -108,6 +113,6 @@ span,
 .ww-btn,
 .ww-btn-s,
 .ww-btn-group{
-background-image: url(../../images/imageset/icon.png?20150326150631);
-background-image: -webkit-image-set(url(../../images/imageset/icon.png?20150326150631) 1x, url(../../images/imageset/icon@2x.png?20150326150631) 2x); background-image: -moz-image-set(url(../../images/imageset/icon.png?20150326150631) 1x, url(../../images/imageset/icon@2x.png?20150326150631) 2x); background-image: -ms-image-set(url(../../images/imageset/icon.png?20150326150631) 1x, url(../../images/imageset/icon@2x.png?20150326150631) 2x); background-image: image-set(url(../../images/imageset/icon.png?20150326150631) 1x, url(../../images/imageset/icon@2x.png?20150326150631) 2x);
+background-image: url(../../images/imageset/icon.png?20160624022159);
+background-image: -webkit-image-set(url(../../images/imageset/icon.png?20160624022159) 1x, url(../../images/imageset/icon@2x.png?20160624022159) 2x); background-image: -moz-image-set(url(../../images/imageset/icon.png?20160624022159) 1x, url(../../images/imageset/icon@2x.png?20160624022159) 2x); background-image: -ms-image-set(url(../../images/imageset/icon.png?20160624022159) 1x, url(../../images/imageset/icon@2x.png?20160624022159) 2x); background-image: image-set(url(../../images/imageset/icon.png?20160624022159) 1x, url(../../images/imageset/icon@2x.png?20160624022159) 2x);
 }

@@ -1,7 +1,7 @@
 {
   "name": "css-spritesmith",
   "description": "A plugin to help front engineer creating css sprite.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "https://github.com/laoshu133/css-spritesmith",
   "author": {
     "name": "Mikongge",
@@ -26,15 +26,15 @@
     "node": ">= 0.9.0"
   },
   "scripts": {
-    "test": "grunt test && cd test && node test.js"
+    "test": "grunt jshint && cd test && node test.js"
   },
   "dependencies": {
-    "async": "^0.9.0",
-    "spritesmith": "~1.1.0"
+    "async": "^2.0.0-rc.6",
+    "spritesmith": "^1.5.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.10.0"
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0"
   },
   "keywords": [
     "spritesmith",

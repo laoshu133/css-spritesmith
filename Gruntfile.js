@@ -1,12 +1,9 @@
 /*
- * grunt-css-sprite
+ * css-spritesmith
  * https://github.com/laoshu133
  *
  * Licensed under the MIT license.
  */
-
-var fs = require('fs');
-var cssSpriteSmith = require('./lib/css-spritesmith');
 
 module.exports = function(grunt) {
 	grunt.initConfig({
@@ -19,5 +16,4 @@ module.exports = function(grunt) {
 
 	// 声明别名
 	grunt.registerTask('default', ['jshint']);
-	grunt.registerTask('test', ['default']);
 };
