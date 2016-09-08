@@ -4,9 +4,12 @@ var cssSpriteSmith = require('../lib/css-spritesmith');
 // use media query
 var timeStamp = +new Date();
 console.log('Start create sprite, with media query');
+console.log(process.cwd());
 
 cssSpriteSmith({
     cssfile: 'css/icon.css',
+    //服务器根目录，用来定位绝对路径的图片引用      
+    staticPath: process.cwd(),
     // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
     imagepath: 'slice/',
     // 雪碧图输出目录，注意，会覆盖之前文件！默认 images/
@@ -36,12 +39,13 @@ cssSpriteSmith({
     console.log(cssFile, 'write success!');
 
     // sprite image
-    // var srpiteFile = 'publish/images/icon.png';
-    var srpiteFile = data.spriteData.imagePath;
-    fs.writeFileSync(srpiteFile, data.spriteData.image, {
+    // var spriteFile = 'publish/images/icon.png';
+    console.log(data);
+    var spriteFile = data.spriteData.imagePath;
+    fs.writeFileSync(spriteFile, data.spriteData.image, {
         encoding: 'binary'
     });
-    console.log(srpiteFile, 'write success!');
+    console.log(spriteFile, 'write success!');
 
     // retina sprite image
     // var retinaSrpiteFile = 'publish/images/icon@2x.png';
@@ -89,12 +93,12 @@ cssSpriteSmith({
     console.log(cssFile, 'write success!');
 
     // sprite image
-    // var srpiteFile = 'publish/images/imageset/icon.png';
-    var srpiteFile = data.spriteData.imagePath;
-    fs.writeFileSync(srpiteFile, data.spriteData.image, {
+    // var spriteFile = 'publish/images/imageset/icon.png';
+    var spriteFile = data.spriteData.imagePath;
+    fs.writeFileSync(spriteFile, data.spriteData.image, {
         encoding: 'binary'
     });
-    console.log(srpiteFile, 'write success!');
+    console.log(spriteFile, 'write success!');
 
     // retina sprite image
     // var retinaSrpiteFile = 'publish/images/imageset/icon@2x.png';
