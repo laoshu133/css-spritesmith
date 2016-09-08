@@ -39,12 +39,12 @@ a[href*='}{']::after{ content:'}{';}
 .iocn_ext5{ background:#fff no-repeat;background-position: -78px -66px;}
 
 /* path test */
-.iocn_ext7{ background-image:url(/slice/icon_wait.png);}
+.iocn_ext7{ background-position: -78px -66px;}
 .iocn_ext8{ background-image:url(/w/grunt-css-sprite/test/slice/icon_wait.png);}
 
 .iocn_ext9{
 	/* multi-line test */
-	background:url(/slice/icon_wait.png) no-repeat;
+	background: no-repeat;background-position: -78px -66px;
 	background-image: no-repeat;background-position: -78px -66px;
 }
 
@@ -93,7 +93,7 @@ span{ background: no-repeat;background-position: -78px -66px; }
 }
 
 
-/* ../images/icon.png?20160624022159 */
+/* ../images/icon-sprite.png?20160908101333 */
 .icon_switch-off,
 .icon_switch-on,
 .icon_tip-error,
@@ -105,6 +105,7 @@ span{ background: no-repeat;background-position: -78px -66px; }
 .iocn_ext2,
 .iocn_ext4,
 .iocn_ext5,
+.iocn_ext7,
 .iocn_ext9,
 .iocn_ext10,
 #iocn_ext11,
@@ -112,11 +113,11 @@ span,
 .ww-btn,
 .ww-btn-s,
 .ww-btn-group{
-background-image: url(../images/icon.png?20160624022159);
+background-image: url(../images/icon-sprite.png?20160908101333);
 }
 
 
-/* ../images/icon@2x.png?20160624022159 */
+/* ../images/icon-sprite@2x.png?20160908101333 */
 @media only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi), only screen and (min-resolution: 2dppx) {
 .icon_switch-off,
 .icon_switch-on,
@@ -129,6 +130,7 @@ background-image: url(../images/icon.png?20160624022159);
 .iocn_ext2,
 .iocn_ext4,
 .iocn_ext5,
+.iocn_ext7,
 .iocn_ext9,
 .iocn_ext10,
 #iocn_ext11,
@@ -136,7 +138,7 @@ span,
 .ww-btn,
 .ww-btn-s,
 .ww-btn-group{
-background-image: url(../images/icon@2x.png?20160624022159);
+background-image: url(../images/icon-sprite@2x.png?20160908101333);
 background-size: 136px auto;
 }
 .icon_switch-off{
@@ -172,6 +174,9 @@ background-position: -75px -65px;
 .iocn_ext5{
 background-position: -75px -65px;
 }
+.iocn_ext7{
+background-position: -75px -65px;
+}
 .iocn_ext9{
 background-position: -75px -65px;
 }
@@ -197,4 +202,4 @@ background-position: -65px 0;
 } 
 }
 
-.css_stamp{ content:"20160624022159";}
+.css_stamp{ content:"20160908101333";}

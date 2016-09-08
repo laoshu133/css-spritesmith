@@ -4,13 +4,20 @@ var cssSpriteSmith = require('../lib/css-spritesmith');
 // use media query
 var timeStamp = +new Date();
 console.log('Start create sprite, with media query');
+console.log(process.cwd());
 
 cssSpriteSmith({
     cssfile: 'css/icon.css',
+    //服务器根目录，用来定位绝对路径的图片引用      
+    staticPath: process.cwd(),
     // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
     imagepath: 'slice/',
+    // 雪碧图输出目录，注意，会覆盖之前文件！默认 images/
+    spritedest: 'publish/images/',
     // 替换后的背景路径，默认 ../images/
     spritepath: '../images/',
+    // 默认雪碧图名字会是所在css的名字+nameExtend，例如a.css, nameExtend:'-sprite' ——> a-sprite.png
+    nameExtend: '-sprite',
     // 各图片间间距，如果设置为奇数，会强制+1以保证生成的2x图片为偶数宽高，默认 0
     padding: 2,
     // 是否使用 image-set 作为2x图片实现，默认不使用
@@ -32,14 +39,17 @@ cssSpriteSmith({
     console.log(cssFile, 'write success!');
 
     // sprite image
-    var srpiteFile = 'publish/images/icon.png';
-    fs.writeFileSync(srpiteFile, data.spriteData.image, {
+    // var spriteFile = 'publish/images/icon.png';
+    console.log(data);
+    var spriteFile = data.spriteData.imagePath;
+    fs.writeFileSync(spriteFile, data.spriteData.image, {
         encoding: 'binary'
     });
-    console.log(srpiteFile, 'write success!');
+    console.log(spriteFile, 'write success!');
 
     // retina sprite image
-    var retinaSrpiteFile = 'publish/images/icon@2x.png';
+    // var retinaSrpiteFile = 'publish/images/icon@2x.png';
+    var retinaSrpiteFile = data.retinaSpriteData.imagePath;
     fs.writeFileSync(retinaSrpiteFile, data.retinaSpriteData.image, {
         encoding: 'binary'
     });
@@ -67,6 +77,8 @@ cssSpriteSmith({
     },
     */
     spritepath: '../../images/imageset/',
+    // 默认雪碧图名字会是所在css的名字+nameExtend，例如a.css, nameExtend:'-sprite' ——> a-sprite.png
+    nameExtend: '-sprite',
     spritedest: 'publish/images/imageset/',
     //,spritepath: '/w/grunt-css-sprite/test/publish/images/imageset/'
 }, function(err, data) {
@@ -81,14 +93,16 @@ cssSpriteSmith({
     console.log(cssFile, 'write success!');
 
     // sprite image
-    var srpiteFile = 'publish/images/imageset/icon.png';
-    fs.writeFileSync(srpiteFile, data.spriteData.image, {
+    // var spriteFile = 'publish/images/imageset/icon.png';
+    var spriteFile = data.spriteData.imagePath;
+    fs.writeFileSync(spriteFile, data.spriteData.image, {
         encoding: 'binary'
     });
-    console.log(srpiteFile, 'write success!');
+    console.log(spriteFile, 'write success!');
 
     // retina sprite image
-    var retinaSrpiteFile = 'publish/images/imageset/icon@2x.png';
+    // var retinaSrpiteFile = 'publish/images/imageset/icon@2x.png';
+    var retinaSrpiteFile = data.retinaSpriteData.imagePath;
     fs.writeFileSync(retinaSrpiteFile, data.retinaSpriteData.image, {
         encoding: 'binary'
     });
